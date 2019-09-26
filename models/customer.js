@@ -1,6 +1,32 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+ 
+const nameObj = mongoose.Schema.Types.ObjectId;
+const addObj = mongoose.Schema.Types.ObjectId;
+const contactObj = mongoose.Schema.Types.ObjectId;
+const vehClassObj = mongoose.Schema.Types.ObjectId;
+const amountObj = mongoose.Schema.Types.ObjectId;
+const exStatObj = mongoose.Schema.Types.ObjectId;
+const licenseObj = mongoose.Schema.Types.ObjectId;
 
+const customerSchema = mongoose.Schema({
+  nic: {type: Number,required: true},
+  name: {type: nameObj},
+  address: {type: {addObj}},
+  contact: {type: {contactObj}},
+  dob: {type: Date},
+  gender : {type: String,trim: true},
+  trainingType : {type: String,trim: true},
+  vehicleType : {type: String,trim: true},
+  vehicleClass: {type: {vehClassObj}},
+  amount: {type: {amountObj}},
+  examStatus: {type: {exStatObj}},
+  license: {type: {licenseObj}}
+})
+
+
+mongoose.model('Customer', customerSchema);
+
+/*
 var customerSchema = new Schema({
   nic:{type:Number},
   name : {
@@ -10,7 +36,7 @@ var customerSchema = new Schema({
     initName : {type:String,trim:true}
   },
   address : {
-    homeNumebr : {type:Number},
+    homeNumber : {type:Number},
     street1 : {type:String,trim:true},
     street2 : {type:String,trim:true},
     city : {type:String,trim:true},
@@ -20,11 +46,7 @@ var customerSchema = new Schema({
     type : {type:String,trim:true},
     value : {type:Number}
   },
-  dob : {
-    day : {type:Number},
-    month : {type:Number},
-    year : {type:Number}
-  },
+  dob : {type:Date},
   gender : {type:String,trim:true},
   trainingType : {type:String,trim:true},
   vehicleType : {type:String,trim:true},
@@ -49,5 +71,4 @@ var customerSchema = new Schema({
   },
   custImage : {data:Buffer,contentType:String}
 });
-
-mongoose.model('Customer', customerSchema);
+*/
