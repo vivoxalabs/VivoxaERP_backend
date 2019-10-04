@@ -9,7 +9,7 @@ const exStatObj = mongoose.Schema.Types.ObjectId;
 const licenseObj = mongoose.Schema.Types.ObjectId;
 
 const customerSchema = mongoose.Schema({
-  nic: {type: Number,required: true},
+  nic: {type: String,required: true},
   name: {type: nameObj},
   address: {type: {addObj}},
   contact: {type: {contactObj}},
@@ -20,11 +20,14 @@ const customerSchema = mongoose.Schema({
   vehicleClass: {type: {vehClassObj}},
   amount: {type: {amountObj}},
   examStatus: {type: {exStatObj}},
-  license: {type: {licenseObj}}
+  license: {type: {licenseObj}},
+  custImage : {type: String}
 })
 
 
-mongoose.model('Customer', customerSchema);
+//test comment
+
+module.exports = mongoose.model('Customer', customerSchema);
 
 /*
 var customerSchema = new Schema({
