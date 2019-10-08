@@ -54,9 +54,9 @@ const customerSchema = new Schema({
   trainingType : {type: String,trim: true},
   vehicleType : {type: String,trim: true},
   vehicleClass: [vehicleClassSchema],
-  amount: [amountSchema],
+  amount: amountSchema,
   examStatus: [examStatusSchema],
-  license: [licenseSchema],
+  license: licenseSchema,
   custImage : {type: String}
 });
 
