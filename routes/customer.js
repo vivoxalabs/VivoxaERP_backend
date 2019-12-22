@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
     })
 });
 
-
+/*
 router.post('/', (req,res) => {
     const customer = new Customer({
         nic: req.body.nic,
@@ -39,10 +39,14 @@ router.post('/', (req,res) => {
             res.json({message: err})
         });
 });
+*/
 
-/*
 ///////// Create Customer 
 router.post('/', (req,res) => {
+    insertRecord(req,res);
+});
+
+function insertRecord(req,res){
     const customer = new Customer({
         nic: req.body.nic,
         name: {
@@ -95,6 +99,6 @@ router.post('/', (req,res) => {
     .catch(err => {
         res.json({message: err });
     })
-});
-*/
+}
+
 module.exports = router;

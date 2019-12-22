@@ -23,8 +23,9 @@ app.get('/', (req, res) => {
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.DB_CONNECTION,
-  () => console.log('connected to db')
-);
+  (err) => {if(!err) {console.log('connected to db')}
+  else {console.log('Error in DB connection : ' + err)}
+  });
 
 //Load all files in models dir
 fs.readdirSync(__dirname + '/models').forEach(function(filename){
