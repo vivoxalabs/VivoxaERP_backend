@@ -1,15 +1,33 @@
 {
-  "name": "erpback",
-  "version": "0.0.0",
-  "private": true,
+  "name": "vivoxaerp_backend",
+  "version": "1.0.0",
+  "description": "backend devs of vivoxa erp",
+  "main": "./src/app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon app"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivoxalabs/VivoxaERP_backend.git"
+  },
+  "author": "Sandman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vivoxalabs/VivoxaERP_backend/issues"
+  },
+  "homepage": "https://github.com/vivoxalabs/VivoxaERP_backend#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "dotenv": "^8.1.0",
-    "express": "^4.16.4",
-    "mongodb": "^3.3.2",
-    "mongoose": "^5.7.5"
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.1",
+    "http-status-codes": "^1.4.0",
+    "mongoose": "^5.9.11",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "jest": "^25.5.3",
+    "nodemon": "^2.0.3"
   }
 }
